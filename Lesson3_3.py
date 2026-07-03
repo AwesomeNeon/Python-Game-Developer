@@ -6,42 +6,68 @@ def draw():
     
     screen.draw.text("NEON WIREFRAME CITY", center=(500, 50), fontsize=55,color=(255,0,255))
     
-    
-    
     sun_x = 500
     sun_y = 180 
     radius = 90
     
     screen.draw.circle((sun_x,sun_y),radius,(255,0,255))
     
-    for y in range (130,240,15):
-        screen.drawline((420,y),(580,y),(255,0,255))
+    for y in range(130,240,15):
+        screen.draw.line((420,y),(580,y),(255,0,255))
         
-        horizon_y = 420
-        screen.draw.line((0,horizon_y),(1000, horizon_y),(0,255,255))
-        vanish_x =500
-        vanish_y = horizon_y
+    horizon_y = 420
+    screen.draw.line((0,horizon_y),(1000, horizon_y),(0,255,255))
+    vanish_x =500
+    vanish_y = horizon_y
         
-        for x in range(0,1001,40):
-            screen.draw.line((x,HEIGHT),(vanish_x,vanish_y,)(0,255,255))
+    for x in range(0,1001,40):
+        screen.draw.line((x,HEIGHT),(vanish_x,vanish_y),(0,255,255))
            
-            y = horizon_y + 20
-            gap = 20
+    y = horizon_y + 20
+    gap = 20
             
-            while y < HEIGHT:
-                screen.draw.line((0,y),(1000,y),(0,255,255))
-                y += ga
-                gap +=6
+    while y < HEIGHT:
+        screen.draw.line((0,y),(1000,y),(0,255,255))
+        y += gap
+        gap +=6
                 
-                left_bulidings = [(50,220,70,200),(150,170,90,250),(280,270,60,150)]
+    left_bulidings = [(50,220,70,200),(150,170,90,250),(280,270,60,150)]
                 
-                for x, y, w, h in left_bulidings
+    for x, y, w, h in left_bulidings:
                 
-                offset = 30
-                screen.draw.rect(Rect((x,y),(w,h)), (255,0,255))
+        offset = 30
+        screen.draw.rect(Rect((x,y),(w,h)), (255,0,255))
+        screen.draw.rect(Rect((x+offset, y - offset),(w,h)), (255,0,255))
                 
-                screen.draw.line((x,y), (x + offset,y - offset),(255,0255,255))
-                screen.draw.line((x + w,y)(x+w+offset, y - offset ),(255,0,255))
-                screen.draw.line(
-                    (x + w, y + h),( x + w + offset),(255,0,255)
+        screen.draw.line((x,y), (x + offset,y - offset),(255,0,255))
+        screen.draw.line((x + w,y),(x+w+offset, y - offset ),(255,0,255))
+        screen.draw.line((x, y + h), (x + offset, y + h - offset), (255, 0, 255))
+        screen.draw.line(
+                    (x + w, y + h),( x + w + offset, y + h - offset),(255,0,255)
                 )
+    right_buildings = [(650, 270, 70, 150), (760, 170, 90, 250,), (880, 220, 70, 200)]
+                
+    for x, y, w, h, in right_buildings:
+        offset = 30
+                    
+        screen.draw.rect(Rect((x,y),(w,h)), (0, 255, 255))
+                    
+        screen.draw.rect(Rect((x - offset, y - offset),(w, h)), (0, 255, 255))
+                    
+        screen.draw.line((x, y), (x - offset, y - offset), (0, 255, 255))
+        screen.draw.line((x + w, y), (x + w - offset, y - offset), (0, 255, 255 ))
+        screen.draw.line((x, y + h), (x - offset, y + h - offset), (0, 255, 255))
+        screen.draw.line((x + w, y + h), (x + w - offset, y + h - offset), (0, 255, 255))
+    stars = [
+        (80, 60),
+        (150,90),
+        (250, 70),
+        (350, 100),
+        (650, 80),
+        (760, 60),
+        (900, 90),
+    ]
+    for x, y in stars:
+        screen.draw.filled_circle((x, y), 2, (255, 255, 255))
+                    
+pgzrun.go()
