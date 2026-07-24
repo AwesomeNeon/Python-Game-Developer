@@ -124,7 +124,7 @@ def on_key_down(key):
         current_level += 1
                     
         if current_level < len(levels):
-            maze + levels[current_level]
+            maze = levels[current_level]
             player_row = 0
             player_col = 0
                         
