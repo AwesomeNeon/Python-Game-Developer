@@ -27,4 +27,39 @@ quiz = (
 
 ("7. Which brackets are used to create a tuple?",
  ("{}","[]"."()","<>"),)
-3),
+3,
+
+(
+    "8. Which data stucture stores data as key-value pairs?",
+    ("List", "Tuple","set","Dictionary"),
+    4,
+)
+(
+    "9 Which  keyword is used to take input from user?",
+    ("scan()","input()","read()","accept()"),
+    2,
+)
+(
+    "10. Which data sructure stores oly unjque value?",
+    ("list,"tuple","Dictonary","set"),
+     4,
+    ),
+)
+for question in quiz:
+
+print("\n" + question[0])
+
+print("1.", question[1][0])
+print("2.", question[1][1])
+print("3.", question[1][2])
+print("4.", question[1][3])
+
+answer = int(input("ENTER YOUR CHOICE (1-4): "))
+
+if answer == question[2]:
+print == question[2]:
+print("correct!")
+score += 1
+else:
+print("Wrong!")
+print("correct answer:", question[1][question[2] -1])
